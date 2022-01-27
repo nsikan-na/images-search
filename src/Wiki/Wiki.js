@@ -58,7 +58,8 @@ export default function WikiMain() {
       >
         <h1 className="text-5xl my-3 font-bold">Quick Search</h1>
         <input
-          style={{ width: "50%", fontSize: "2em" }}
+        className="text-4xl w-70"
+          style={{"border":"2px solid black"}}
           placeholder="Enter a term"
           ref={myInput}
           type="text"

@@ -54,11 +54,18 @@ export default function ExpenseInputs({ addTrans, event, updateTran }) {
         <br />
         <br />
         <label>Description</label>
-        <input ref={descRef} type="text" name="desc" className="ml-3 w-40" />
+        <input
+          ref={descRef}
+          style={{ border: "1px solid black" }}
+          type="text"
+          name="desc"
+          className="ml-3 w-40"
+        />
         <br />
         <br />
         <label>Amount</label>
         <input
+          style={{ border: "1px solid black" }}
           ref={amountRef}
           type="number"
           name="amount"
