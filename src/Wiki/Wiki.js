@@ -1,14 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
-
 export default function WikiMain() {
-  const [result, setResult] = useState("");
-  const [term, setTerm] = useState("baby lion");
+  const babyAnimals=['horse','monkey','cat',"lion",'wolf', "sheep", "bear","cow","turtle",'fox','goat','bunny']
+  const [term, setTerm] = useState(`baby ${babyAnimals[Math.round(Math.random()*babyAnimals.length-1)]}`);
   const [imgUrl, setImgUrl] = useState(term);
   const myInput = useRef();
-
   useEffect(() => {
     if (!term) return;
+    if (term==='baby undefined'){
+      setTerm('baby goat')
+    }
     (async function () {
       await axios
         .get("https://api.unsplash.com/search/photos", {
@@ -21,55 +22,38 @@ export default function WikiMain() {
           },
         })
         .then((res) => {
-          setImgUrl(res.data.results[0].urls.regular);
-        });
-      await axios
-        .get("https://en.wikipedia.org/w/api.php", {
-          params: {
-            action: "query",
-            list: "search",
-            origin: "*",
-            format: "json",
-            srsearch: term,
-          },
-        })
-        .then((response) => {
-          setResult(
-            <>
-              {response.data.query.search[0].snippet
-                .replaceAll('<span class="searchmatch">', "")
-                .replaceAll("</span>", "")
-                .replaceAll("&quot;", ``)
-                .concat("...")}
-            </>
-          );
+          setImgUrl(res.data.results[Math.round(Math.random()*10)].urls.regular);
         });
     })();
     myInput.current.value = "";
-  }, [term, imgUrl]);
+  }, [term, setImgUrl]);
 
   return (
-    <div className="text-center m-auto">
+    <div className="text-center m-auto ">
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          setTerm(myInput.current.value);
         }}
       >
-        <h1 className="text-5xl my-3 font-bold">Quick Search</h1>
+        <h1 className="text-5xl mt-10 mb-4 font-semibold">Quick Search</h1>
+
         <input
-        className="text-4xl w-70"
-          style={{"border":"2px solid black"}}
-          placeholder="Enter a term"
+          className="text-3xl w-11/12 mb-4 rounded-3xl p-3"
+          style={{ border: "2px solid black" }}
+          placeholder="Enter any term"
           ref={myInput}
           type="text"
         />
+        <br />
+        <button
+          className="text-xl text-white bg-black p-2 rounded-3xl hover:text-grey-400"
+          onClick={(e) => setTerm(myInput.current.value)}
+        >
+          Search
+        </button>
       </form>
-      <h2 className=" text-3xl my-5">
-        {term[0].toUpperCase() + term.slice(1)}
-      </h2>
-      <h3 className="m-auto text-2xl my-4">{result}</h3>
-      <img className="m-auto max-w-3xl" src={imgUrl} />
+      <h2 className=" text-3xl font-semibold my-3">{term}</h2>
+      <img className="m-auto w-11/12 mb-5 rounded-3xl" src={imgUrl} />
     </div>
   );
 }

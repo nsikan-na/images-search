@@ -1,14 +1,21 @@
 import React from "react";
 import Wiki from "./Wiki/Wiki";
-import ExpenseTracker from "./ExpenseTracker/ExpenseTracker";
 
-export default function SPA_Widgets() {
+import { Routes, Route, BrowserRouter, Link } from "react-router-dom";
+export default function App() {
   return (
+      <BrowserRouter className="flex">
+        <nav className="space-x-5 text-2xl font-semibold m-3 right-0 top-0 absolute">
+          <Link to="/wiki" className="hover:text-gray-400">
+            1
+          </Link>
 
-    <>
-      <Wiki/>
-      <ExpenseTracker />
-      </>
+        </nav>
+        <Routes>
+          <Route path="/" element={<Wiki />} />
+          <Route path="/wiki" element={<Wiki />} />
+        </Routes>
+      </BrowserRouter>
 
   );
 }
