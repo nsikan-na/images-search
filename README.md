@@ -1,7 +1,7 @@
 # SPA Widgets! #
 [Visit Live Site](https://nsikan-spa-widgets.netlify.app/)
 
-This project consisits of multiple applications that consume apis for cool features.
+This project consists of multiple applications that consume apis for cool features.
 
 ## This was build using ##
 * React.js (html,javascript)
