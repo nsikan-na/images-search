@@ -14,17 +14,20 @@ export default function WikiMain() {
     "goat",
     "bunny",
   ];
+  //randomized the default picture to be baby Animals
   const [term, setTerm] = useState(
     `baby ${babyAnimals[Math.round(Math.random() * babyAnimals.length - 1)]}`
   );
   const [imgUrl, setImgUrl] = useState(term);
   const myInput = useRef();
   useEffect(() => {
+
     if (!term) return;
     if (term === "baby undefined") {
       setTerm("baby goat");
     }
     (async function () {
+      //fetch image from unsplash api
       await axios
         .get("https://api.unsplash.com/search/photos", {
           headers: {
@@ -37,6 +40,7 @@ export default function WikiMain() {
         })
         .then((res) => {
           setImgUrl(
+            //set img to randomized fetched img
             res.data.results[Math.round(Math.random() * 10)].urls.regular
           );
         });
