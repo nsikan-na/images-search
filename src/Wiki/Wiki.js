@@ -4,7 +4,6 @@ export default function WikiMain() {
   const babyAnimals = [
     "horse",
     "monkey",
-    "cat",
     "lion",
     "wolf",
     "sheep",
