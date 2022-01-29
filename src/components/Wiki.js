@@ -21,7 +21,6 @@ export default function WikiMain() {
   const [imgUrl, setImgUrl] = useState(term);
   const myInput = useRef();
   useEffect(() => {
-
     if (!term) return;
     if (term === "baby undefined") {
       setTerm("baby goat");
@@ -56,7 +55,7 @@ export default function WikiMain() {
         }}
       >
         <h1 className="text-4xl mt-10 mb-4 font-semibold md:text-5xl lg:text-5xl">
-          Quick Search
+          Image Search
         </h1>
 
         <input
@@ -77,7 +76,10 @@ export default function WikiMain() {
       <h2 className=" text-2xl font-semibold my-3 md:text-4xl md:my-5 ">
         {term}
       </h2>
-      <img className="m-auto w-11/12 mb-40 rounded-3xl md:w-10/12 lg:w-8/12 2xl:w-6/12" src={imgUrl} />
+      <img
+        className="m-auto w-11/12 mb-40 rounded-3xl md:w-10/12 lg:w-8/12 2xl:w-6/12"
+        src={imgUrl}
+      />
     </div>
   );
 }

@@ -10,6 +10,3 @@ This project consists of multiple applications that consume apis for cool featur
 ## Widget 1- Image Search ##
 This widget fetches 10 images bases off user input from the unsplash api. I randomized which image is displayed. 
 
-## To Do: ##
-
-* Add more widgets
