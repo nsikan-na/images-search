@@ -8,7 +8,7 @@ This project consists of multiple applications that consume apis for cool featur
 * Tailwind.css (css)
 
 ## Widget 1- Image Search ##
-This widget gets user input(term) and on submit fetches 10 images from the unsplash api. I randomized which image is displayed. 
+This widget fetches 10 images bases off user input from the unsplash api. I randomized which image is displayed. 
 
 ## To Do: ##
 
