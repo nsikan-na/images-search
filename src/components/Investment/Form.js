@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Investment.css";
+import "./Form.css";
 
 export default function Investment() {
   const [investment, setInvestment] = useState("");
@@ -35,7 +35,7 @@ export default function Investment() {
           calcInvestment(e);
         }}
       >
-        <h1>Enter Your Information</h1>
+        <h2>Enter Your Information</h2>
         <label>Enter your current age.</label>
         <br />
         <input className="input" type="number" name="curAge" value="20" />
@@ -62,7 +62,7 @@ export default function Investment() {
           className="input"
           type="number"
           name="monthlyDeposit"
-          value="1000"
+          value="1500"
         />
         <p>
           This is the amount you invest each month. We recommend investing 15%
@@ -75,7 +75,7 @@ export default function Investment() {
           className="input"
           type="number"
           name="interestRate"
-          value=".10"
+          value=".15"
         />
         <p>
           This is the return your investment will generate over time.
