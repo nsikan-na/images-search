@@ -1,5 +1,6 @@
 import React from "react";
-import Wiki from "./Wiki/Wiki";
+import Wiki from "./components/Wiki";
+import Investment from "./components/Investment"
 
 import { Routes, Route, BrowserRouter, Link } from "react-router-dom";
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Wiki />} />
           <Route path="/wiki" element={<Wiki />} />
+          <Route path="/investment" element={<Investment />} />
         </Routes>
       </BrowserRouter>
 
