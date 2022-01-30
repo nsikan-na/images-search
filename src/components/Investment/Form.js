@@ -82,7 +82,6 @@ export default function Investment() {
           Historically, the 30-year return of the S&P 500 has been roughly
           10-12%.1
         </p>
-        <br />
         <button>Calculate</button>
       </form>
     </div>

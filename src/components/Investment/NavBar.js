@@ -11,7 +11,6 @@ export default function NavBar() {
       <CloseIcon/>
       <SearchIcon />
       <ArrowForwardIosIcon/>
-      <ShoppingCartIcon/>
       <div>
         <nav>MENU</nav>
         <li>Guided Plans</li>
