@@ -11,16 +11,16 @@ export default function Investment() {
       Math.round(
         principal.value *
           Math.pow(
-            1 + interestRate.value / 12,
+            1 + (interestRate.value/100) / 12,
             12 * (retireAge.value - curAge.value)
           ) +
           monthlyDeposit.value *
             ((Math.pow(
-              1 + interestRate.value / 12,
+              1 + (interestRate.value/100) / 12,
               12 * (retireAge.value - curAge.value)
             ) -
               1) /
-              (interestRate.value / 12))
+              ((interestRate.value/100) / 12))
       )
     );
     if (!investment) return;
@@ -100,7 +100,7 @@ export default function Investment() {
           className="input text-xl pl-8 py-2 rounded-md w-9/12 mt-1 mb-1"
           type="number"
           name="interestRate"
-          value=".15"
+          value="10"
         />
         <p className="text-sm font-semibold text-gray-500">
           This is the return your investment will generate over time.
