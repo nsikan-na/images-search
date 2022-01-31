@@ -1,4 +1,4 @@
-# SPA Widgets! #
+# Image Search #
 [Visit Live Site](https://nsikan-spa-widgets.netlify.app/)
 
 This project consists of multiple applications that consume apis for cool features.
